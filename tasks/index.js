@@ -13,7 +13,7 @@ task("bytecode", "Prints bytecode").setAction(async function({ address }, { ethe
 
 task("feeder:feed", "Feed").setAction(async function({ amount }, { getNamedAccounts, ethers: { BigNumber }, getChainId }) {
   const { deployer, dev } = await getNamedAccounts()
-
+ console.log("Bytecode", 777777)
   const feeder = new ethers.Wallet(process.env.FEEDER_PRIVATE_KEY, ethers.provider)
 
   await (await feeder.sendTransaction({

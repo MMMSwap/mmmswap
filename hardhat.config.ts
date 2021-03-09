@@ -20,10 +20,11 @@ import { HardhatUserConfig } from "hardhat/types";
 import { removeConsoleLog } from "hardhat-preprocessor";
 
 const accounts = {
-  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
-  // accountsBalance: "990000000000000000000",
+  //mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
+  mnemonic: "guide once shrimp bargain sun clip april lecture shiver enjoy tragic wine",
+// accountsBalance: "990000000000000000000",
 }
-
+console.log(accounts)
 const config: HardhatUserConfig = {
   abiExporter: {
     path: "./abi",
@@ -32,7 +33,8 @@ const config: HardhatUserConfig = {
     // only: [],
     // except: []
   },
-  defaultNetwork: "hardhat",
+  //defaultNetwork: "hardhat",
+  defaultNetwork: "ropsten",
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
   },
@@ -46,15 +48,21 @@ const config: HardhatUserConfig = {
     timeout: 20000,
   },
   namedAccounts: {
-    deployer: {
-      default: 0
-    },
-    dev: {
+    deployer: 
+//"0x46c176ed29e50712eebc8e9c381a1f18b7db237002ba4d926a94baf8f2012713",
+"0x93C265E9C546D41e320ff2C2A909349605834E21",
+/** 
+  {
+      default: 0,
+	  0:"0x93C265E9C546D41e320ff2C2A909349605834E21"
+    },*/
+    dev: "0x1Bd90B8d9A5aaD5a87340cd578Da5171cf5F9525"
+/** {
       // Default to 1
       default: 1,
       // dev address mainnet
       // 1: "",
-    }
+    }*/
   },
   networks: {
     mainnet: {
