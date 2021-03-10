@@ -20,8 +20,7 @@ import { HardhatUserConfig } from "hardhat/types";
 import { removeConsoleLog } from "hardhat-preprocessor";
 
 const accounts = {
-  //mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
-  mnemonic: "guide once shrimp bargain sun clip april lecture shiver enjoy tragic wine",
+  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
 // accountsBalance: "990000000000000000000",
 }
 console.log(accounts)
@@ -49,14 +48,12 @@ const config: HardhatUserConfig = {
   },
   namedAccounts: {
     deployer: 
-//"0x46c176ed29e50712eebc8e9c381a1f18b7db237002ba4d926a94baf8f2012713",
-"0x93C265E9C546D41e320ff2C2A909349605834E21",
+"0x268C893b196ddd537CFfFEfF44CCf9DB2Fc6c93C",
 /** 
   {
       default: 0,
-	  0:"0x93C265E9C546D41e320ff2C2A909349605834E21"
     },*/
-    dev: "0x1Bd90B8d9A5aaD5a87340cd578Da5171cf5F9525"
+    dev: "0x81D2A8c07B6281615fc79a20A0297553dbA069E4",//"0x1Bd90B8d9A5aaD5a87340cd578Da5171cf5F9525"
 /** {
       // Default to 1
       default: 1,
@@ -92,7 +89,9 @@ const config: HardhatUserConfig = {
       live: true,
       saveDeployments: true,
       tags: ["staging"],
-      gasPrice: 5000000000,
+     // gasPrice: 5000000000,
+	  gas: 21000,
+	 // gasPrice: 21000,
       gasMultiplier: 2
     },
     rinkeby: {
@@ -199,7 +198,27 @@ const config: HardhatUserConfig = {
       saveDeployments: true,
       tags: ["staging"],
       gasMultiplier: 2,
-    }
+    },
+    OKExChainTestnet: {
+      url: `http://okexchaintest.okexcn.com:26659/`,
+      accounts,
+      chainId: 65,
+      live: true,
+      saveDeployments: true,
+      tags: ["staging"],
+	  gas: 21000,
+      gasMultiplier: 2
+    },
+	OKExChainMainnet: {
+      url: `https://www.okex.com/okexchain-rpc`,
+      accounts,
+      chainId: 66,
+      live: true,
+      saveDeployments: true,
+      tags: ["staging"],
+	  gas: 21000,
+      gasMultiplier: 2
+    },
   },
   paths: {
     artifacts: "artifacts",

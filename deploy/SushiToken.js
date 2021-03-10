@@ -2,11 +2,12 @@
   const { deploy } = deployments
 
   const { deployer } = await getNamedAccounts()
-
+ 
   await deploy("SushiToken", {
     from: deployer,
     log: true,
     deterministicDeployment: false
+    //deterministicDeployment: true
   })
 }
 

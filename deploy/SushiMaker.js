@@ -29,10 +29,10 @@ module.exports = async function ({ ethers: { getNamedSigner }, getNamedAccounts,
   })
 
   const maker = await ethers.getContract("SushiMaker")
-  if (await maker.owner() !== dev) {
-    console.log("Setting maker owner")
-    await (await maker.transferOwnership(dev, true, false)).wait()
-  }
+ // if (await maker.owner() !== dev) {
+ //   console.log("Setting maker owner")
+ //   await (await maker.transferOwnership(dev, true, false)).wait()
+//  }
 
   // if (await factory.feeTo() !== address) {
   //   // Set FeeTo to maker
